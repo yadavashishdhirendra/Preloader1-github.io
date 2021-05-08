@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+
+    <title>Name Animation - Preloader</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+
+        * {
+            font-family: 'Itim', cursive;
+        }
+
+        .Center_loader {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #000;
+        }
+
+        .Preloader h1 {
+            position: relative;
+            font-size: 8em;
+            color: #222;
+            text-transform: uppercase;
+            border-bottom: 16px solid #222;
+            letter-spacing: 0.05em;
+            line-height: 1.2em;
+        }
+
+        .Preloader h1::before {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            color: #423F8D;
+            overflow: hidden;
+            border-bottom: 16px solid #423F8D;
+            animation: animate 10s linear infinite;
+        }
+
+        @keyframes animate {
+            0% {
+                width: 0;
+            }
+
+            100% {
+                width: 100%;
+            }
+        }
+
+        @media screen and (max-width: 1080px) {
+            .Preloader h1 {
+                font-size: 3em;
+                border-bottom: 10px solid #423F8D;
+            }
+
+            .Preloader h1::before {
+                border-bottom: 10px solid #423F8D;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="Center_loader">
+        <div class="Preloader">
+            <h1 data-text="DiTechCDM...">DiTechCDM...</h1>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
+        crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js" integrity="sha384-lpyLfhYuitXl2zRZ5Bn2fqnhNAKOAaM/0Kr9laMspuaMiZfGmfwRNFh8HlMy49eQ" crossorigin="anonymous"></script>
+    -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous"></script>
+    <!-- <script type="text/javascript">
+        $(window).on("load", function () {
+            $(".Center_loader").fadeOut(2000)
+        });
+    </script> -->
+</body>
+
+</html>
